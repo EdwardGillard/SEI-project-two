@@ -58,6 +58,7 @@ class General extends React.Component {
                         <div className="content">
                           {item.publishedAt.split('T').join(' ').split('Z')}
                         </div>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer">Read More</a>
                       </div>
                     </div>
                   </div>

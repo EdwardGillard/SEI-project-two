@@ -1,29 +1,17 @@
 import React from 'react'
-import { filterCategory } from '../../../lib/api'
+import { businessPage } from '../../../lib/api'
 import NavbarTwo from '../../common/Navbar2'
-import SelectCountry from '../../common/SelectCountry'
 
 class Business extends React.Component {
 
   state = {
-    news: [],
-    country: 'gb'
+    news: []
   }
 
   async componentDidMount() {
     try {
-      const res = await filterCategory(this.state.country, 'business')
+      const res = await businessPage()
       this.setState({ news: res.data.articles })
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  handleChange = async (event) => {
-    console.log(event.target.value)
-    try {
-      await this.setState({ country: event.target.value })
-      this.componentDidMount()
     } catch (err) {
       console.log(err)
     }
@@ -31,14 +19,13 @@ class Business extends React.Component {
 
 
   render() {
-    // console.log(this.state.news)
+    console.log(this.state.news)
     return (
       <>
         <NavbarTwo />
-        <SelectCountry handleChange={this.handleChange} />
         <section className="container is-fluid">
           {this.state.news.map(item => {
-            return <div key={item.url} className="card">
+            return <div key={item.title} className="card">
               <div className="notification">
                 <div className="card-content">
                   <div className="media">
@@ -57,9 +44,8 @@ class Business extends React.Component {
                           {item.description}
                         </div>
                         <div className="content">
-                          {item.publishedAt.split('T').join(' ').split('Z')}
+                          {item.publishedAt.split('T')}
                         </div>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">Read More</a>
                       </div>
                     </div>
                   </div>
