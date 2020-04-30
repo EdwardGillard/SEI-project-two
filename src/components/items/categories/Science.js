@@ -2,6 +2,7 @@ import React from 'react'
 import { filterCategory } from '../../../lib/api'
 import NavbarTwo from '../../common/Navbar2'
 import SelectCountry from '../../common/SelectCountry'
+import ShowArticle from '../ShowArticle'
 
 class Science extends React.Component {
 
@@ -31,44 +32,20 @@ class Science extends React.Component {
 
 
   render() {
-    console.log(this.state.news)
+    const { news } = this.state
     return (
       <>
         <NavbarTwo />
         <SelectCountry handleChange={this.handleChange} />
-        <section className="container is-fluid">
-          {this.state.news.map(item => {
-            return <div key={item.title} className="card">
-              <div className="notification">
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-left">
-                      <figure className="image is-48x48">
-                        <img src={item.urlToImage} alt={item.title} />
-                      </figure>
-                      <div className="media-content">
-                        <p className="title is-4">
-                          {item.title}
-                        </p>
-                        <p className="subtitle is-6">
-                          {item.author}
-                        </p>
-                        <div className="content">
-                          {item.description}
-                        </div>
-                        <div className="content">
-                          {item.publishedAt.split('T').join(' ').split('Z')}
-                        </div>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section className="section">
+          <div className="container">
+            <div className="columns is-multiline">
+              {news.map(item => (
+                <ShowArticle key={item.name} {...item} />
+              ))}
             </div>
-          })}
-
-        </section>
+          </div>
+        </section >
       </>
     )
   }
