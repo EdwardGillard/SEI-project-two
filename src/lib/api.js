@@ -1,9 +1,10 @@
 import axios from 'axios'
 
 
-const apiKey = '&apiKey=6e145feb0c664217b76b233d8c8d7366'
+const apiKey = '&apiKey=6782c412ba294495afbcc7a6791b1125'
 const newsUrl = 'https://newsapi.org/v2/top-headlines'
-const weatherKey = 'current?access_key=7b28970b4f9ea8f2d97c712aa7628aaf'
+const weatherKey = 'current?access_key=851110325e8ed3acbc16f9bc843ac101'
+const weatherURL = 'http://api.weatherstack.com/'
 
 
 export const getAllNews = (country) => {
@@ -15,5 +16,5 @@ export const filterCategory = (country, category) => {
 }
 
 export const getAllWeather = (searchTerm) => {
-  return axios.get(`http://api.weatherstack.com/${weatherKey}&query=${searchTerm}`)
+  return axios.get(`${weatherURL}${weatherKey}&query=${searchTerm}`)
 }
