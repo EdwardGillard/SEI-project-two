@@ -39,7 +39,7 @@ class Business extends React.Component {
     return (
       <>
         <NavbarTwo />
-        <SelectCountry handleChange={this.handleChange} />
+        <SelectCountry />
         <section className="section">
           <div className="container">
             <div className="columns is-multiline">

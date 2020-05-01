@@ -2,37 +2,52 @@ import React from 'react'
 import { getAllWeather } from '../../../lib/api'
 class ShowWeather extends React.Component {
   state = {
-    city: null
+    city: null,
+    weather: null,
+    searchTerm: ''
   }
-  // async componentDidMount() {
-  //   try {
-  //     const res = await getAllWeather()
-  //     this.setState({ city: res.data })
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-  handleChange = async (event) => {
+  async componentDidMount() {
+    try {
+      const res = await getAllWeather(this.state.searchTerm)
+      this.setState({ city: res.data.location, weather: res.data.current })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  handleSubmit = async event => {
     event.preventDefault()
-    console.log(event.target.value
-    )
-    // try {
-    //   await this.setState({ country: event.target.value })
-    //   this.componentDidMount()
-    // } catch (err) {
-    //   console.log(err)
-    // }
+    try {
+      this.componentDidMount()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  handleChange = async event => {
+    const val = event.target.value
+    this.setState({ searchTerm: val })
   }
   render() {
-    console.log(this.state.city)
+    const { weather } = this.state
+    const { city } = this.state
+    if (!this.state.city) return <form
+      onSubmit={this.handleSubmit}
+    >
+      <input
+        onChange={this.handleChange}
+      >
+      </input>
+      <button>Submit</button>
+    </form>
     return (
       <>
         <form
+          onSubmit={this.handleSubmit}
         >
           <input
             onChange={this.handleChange}
           >
           </input>
+          <button>Submit</button>
         </form>
         <section className="section">
           <div className="container">
@@ -40,17 +55,22 @@ class ShowWeather extends React.Component {
               <div className="column is-one-third">
                 <div className="card">
                   <div className="card-content">
-                    {/* <h1 className="title-of-the-card">
-                      {title}</h1> */}
-                    <div className="image-tag">
-                      {/* <img src={urlToImage} alt={title} /> */}
-                      hello
+                    <h1 className="title-of-the-card">
+                      {city.name}, {city.country}
+                    </h1>
+                    <div>
+                      <img src={weather.weather_icons} alt="Weather Icon" />
                     </div>
-                    <p className="author-name">
-                      {/* {author} - {publishedAt.split('T').join(' ').split('Z')} */}
-                    </p>
-                    <div className="description">
-                      {/* {description} */}
+                    <div className="main-content">
+                      <p>Current Temperature: {weather.temperature}°C</p>
+                      <p>Feels like: {weather.feelslike}°C</p>
+                      <p>Wind Speed: {weather.wind_speed}mph</p>
+                      <p>Wind Direction: {weather.wind_dir}</p>
+                      <p>Precipitation: {weather.precip}%</p>
+                      <p>Humidity: {weather.humidity}%</p>
+                      <p>Cloud cover: {weather.cloudcover}%</p>
+                    </div>
+                    <div className="">
                     </div>
                   </div>
                 </div>
