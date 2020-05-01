@@ -2,11 +2,11 @@ import React from 'react'
 
 const ShowArticle = ({ title, urlToImage, publishedAt, author, description, url }) => {
   return (
-    <div className="column is-one-third">
+    <div className="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div className="card">
         <div className="card-content">
-          <h1 className="title-of-the-card">
-            {title}</h1>
+          <h3 className="title-of-the-card">
+            {title}</h3>
           <div className="image-tag">
             <img src={urlToImage} alt={title} />
           </div>
