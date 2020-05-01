@@ -1,75 +1,101 @@
-@import '~bulma/bulma.sass';
+@import "~bulma/bulma.sass";
 .hero {
   background: #00305c;
 }
 @keyframes show {
-  0% { opacity: 0;}
-  34% {opacity: 0;}
-  35% {transform: scale(0.1); opacity: 0.5;}
-  35% {transform: scale(0.5) rotate(360deg); opacity: 0.5;}
-  90% {transform: scale(2) rotate(0deg); opacity: 0.7;}
-  100% {opacity: 1}
+  0% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  35% {
+    transform: scale(0.1);
+    opacity: 0.5;
+  }
+  35% {
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0.5;
+  }
+  90% {
+    transform: scale(2) rotate(0deg);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes show-two {
-  0% { opacity: 0;}
-  50% {opacity: 0;}
-  60% {transform: scale(0.1); opacity: 0.5;}
-  60% {transform: scale(0.5) rotate(360deg); opacity: 0.5;}
-  90% {transform: scale(2) rotate(0deg); opacity: 0.7;}
-  100% {opacity: 1}
-}
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( 1 );
+  0% {
+    opacity: 0;
   }
-  20%
-  {
-    transform: scale( 1.25 );
+  50% {
+    opacity: 0;
   }
-  50%
-  {
-    transform: scale( 1 );
+  60% {
+    transform: scale(0.1);
+    opacity: 0.5;
   }
-  80%
-  {
-    transform: scale( 1.25 );
+  60% {
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0.5;
   }
-  100%
-  {
-    transform: scale( 1 );
+  90% {
+    transform: scale(2) rotate(0deg);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
   }
 }
-.gps_ring, .gps_ring-two{
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.25);
+  }
+  50% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.gps_ring,
+.gps_ring-two {
   border-radius: 30px;
   position: absolute;
   background: white;
-  box-shadow: -1px 2px 15px 25px rgba(255,255,255,1);
+  box-shadow: -1px 2px 15px 25px rgba(255, 255, 255, 1);
 }
 .gps_ring {
   left: 25%;
-  top:45%;
+  top: 45%;
   animation: show 1.5s linear;
-  animation-iteration-count: 1; 
+  animation-iteration-count: 1;
 }
-.gps_ring-two{
+.gps_ring-two {
   left: 65%;
-  top:45%;
+  top: 45%;
   height: 133px;
   animation: show-two 2.5s linear;
-  animation-iteration-count: 1; 
+  animation-iteration-count: 1;
 }
-.gps_ring:hover, .gps_ring-two:hover {
+.gps_ring:hover,
+.gps_ring-two:hover {
   -webkit-transform: scale(1.15);
   cursor: pointer;
 }
-.menu-img{
+.menu-img {
   animation: heartbeat 3s linear;
   animation-delay: 3s;
   animation-iteration-count: infinite;
 }
-.loading-bar{
+.loading-bar {
   display: flex;
   justify-content: center;
   padding: 100px;
@@ -86,17 +112,17 @@
     }
   }
 }
-.navbar-item{
+.navbar-item {
   color: rgb(18, 120, 170);
 }
-  select {
-    font-size: 15px;
-    outline: none;
-    width: 200px;
-    height: 30px;
-    background: rgb(0, 48, 92);
-    color: white;
-  }
+select {
+  font-size: 15px;
+  outline: none;
+  width: 200px;
+  height: 30px;
+  background: rgb(0, 48, 92);
+  color: white;
+}
 .card {
   background-color: rgb(0, 48, 92);
   border-radius: 5px;
@@ -158,112 +184,109 @@ footer {
   }
   height: 40px;
 }
-.business:hover{
+.business:hover {
   border-bottom: 3px solid #85bb65;
 }
-.entertainment:hover{
-  border-bottom: 3px solid #8F00FF
+.entertainment:hover {
+  border-bottom: 3px solid #8f00ff;
 }
-.general:hover{
+.general:hover {
   border-bottom: 3px solid lightgray;
 }
-.health:hover{
-  border-bottom: 3px solid #B5E0F1
+.health:hover {
+  border-bottom: 3px solid #b5e0f1;
 }
-.science:hover{
-  border-bottom: 3px solid #FFB249;
+.science:hover {
+  border-bottom: 3px solid #ffb249;
 }
-.sports:hover{
-  border-bottom: 3px solid #E65539;
+.sports:hover {
+  border-bottom: 3px solid #e65539;
 }
-.technology:hover{
+.technology:hover {
   border-bottom: 3px solid black;
 }
-.filter-country{
+.filter-country {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 20px;
-  left:20px;
+  left: 20px;
   z-index: 1000;
 }
-.search-form input{
+.search-form input {
   width: 500px;
   height: 40px;
   font-size: 30px;
   color: rgb(18, 120, 170);
   outline-color: rgb(18, 120, 170);
   opacity: 0.7;
-  background-image: url('/public/search.png');  
+  background-image: url("/public/search.png");
 }
-.search-form-container, .search-form-container-two{
+.search-form-container,
+.search-form-container-two {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.search-form-container{
+.search-form-container {
   height: 100vh;
 }
 
-.weather-title{
+.weather-title {
   color: white;
   text-align: center;
 }
-.weather-image{
+.weather-image {
   display: flex;
   justify-content: center;
-  img{
+  img {
     height: 120px;
     width: 120px;
+    border: 2px solid white;
   }
 }
-.main-weather-content{
+.main-weather-content {
   text-align: center;
-  .weather-content{
+  .weather-content {
     font-weight: bolder;
-    color: lightgray
   }
 }
-@media only screen and (max-width: 610px){
-  .gps_ring{
+@media only screen and (max-width: 610px) {
+  .gps_ring {
     left: 40%;
     top: 20%;
   }
-  .gps_ring-two{
+  .gps_ring-two {
     left: 40%;
     top: 60%;
   }
-  .navbar-two{
+  .navbar-two {
     margin-bottom: 100px;
   }
-  .filter-country{
+  .filter-country {
     top: 39%;
     left: 10%;
   }
 }
 
-.weather-board{
+.weather-board {
   display: flex;
   justify-content: center;
 }
-// .search-cont{
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-@media only screen and (max-width: 1110px){
-  .filter-country{
+
+@media only screen and (max-width: 1110px) {
+  .filter-country {
     top: 23%;
     left: 40%;
   }
-  .filter-text{
+  .filter-text {
     display: none;
   }
-  .navbar-two{
+  .navbar-two {
     margin-bottom: 40px;
   }
-  select{
+  select {
     font-size: 13px;
     width: 180px;
     height: 25px;

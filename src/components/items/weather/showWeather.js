@@ -51,7 +51,7 @@ class ShowWeather extends React.Component {
     return (
       <>
         <Navbar />
-        <div className="search-form-container-two">   
+        <div className="search-form-container-two">
           <form className="search-form"
             onSubmit={this.handleSubmit}
           >

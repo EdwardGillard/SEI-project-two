@@ -41,7 +41,7 @@ class Business extends React.Component {
       <>
         <Navbar />
         <NavbarTwo />
-        <SelectCountry handleChange={this.handleChange}/>
+        <SelectCountry handleChange={this.handleChange} />
         <section className="section">
           <div className="container">
             <div className="columns is-multiline">
