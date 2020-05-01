@@ -4,6 +4,9 @@ import NavbarTwo from '../../common/Navbar2'
 import SelectCountry from '../../common/SelectCountry'
 import ShowArticle from '../ShowArticle'
 import Spinner from '../../common/Spinner'
+import Navbar from '../../common/Navbar'
+import Footer from '../../common/Footer'
+
 
 class Sports extends React.Component {
 
@@ -37,6 +40,7 @@ class Sports extends React.Component {
     const { news } = this.state
     return (
       <>
+        <Navbar />
         <NavbarTwo />
         <SelectCountry handleChange={this.handleChange} />
         <section className="section">
@@ -48,6 +52,7 @@ class Sports extends React.Component {
             </div>
           </div>
         </section >
+        <Footer />
       </>
     )
   }

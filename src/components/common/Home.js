@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const Home = () => (
-  <section className="hero is-fullheight-with-navbar">
+  <section className="hero is-fullheight">
     <Link to="/news">   
       <div className="gps_ring">    
         <img src="news.png" width="130px" height="130px" alt="News" className="menu-img"/>

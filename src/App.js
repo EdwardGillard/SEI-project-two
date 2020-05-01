@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/common/Home'
-import Navbar from './components/common/Navbar'
-import Footer from './components/common/Footer'
 import ShowNews from './components/items/ShowNews'
 import Business from './components/items/categories/Business'
 import Entertainment from './components/items/categories/Entertainment'
@@ -16,7 +14,6 @@ import ShowWeather from './components/items/weather/showWeather'
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/news/business" component={Business} />
@@ -29,7 +26,6 @@ const App = () => {
         <Route path="/news" component={ShowNews} />
         <Route path="/weather" component={ShowWeather} />
       </Switch>
-      <Footer />
     </BrowserRouter>
   )
 }

@@ -2,7 +2,8 @@ import React from 'react'
 
 const SelectCountry = ({ handleChange }) => {
   return (
-    <form>
+    <div className="filter-country">
+      <span className="filter-text">Filter Results by Country:</span>
       <select onChange={handleChange}>
         <optgroup>
           <option value="gb">United Kingdom</option>
@@ -62,7 +63,7 @@ const SelectCountry = ({ handleChange }) => {
           <option value="ve">Venezuela</option>
         </optgroup>
       </select>
-    </form>
+    </div>
   )
 }
 

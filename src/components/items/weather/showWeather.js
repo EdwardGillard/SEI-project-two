@@ -1,5 +1,8 @@
 import React from 'react'
 import { getAllWeather } from '../../../lib/api'
+import Navbar from '../../common/Navbar'
+import FooterTwo from '../../common/FooterTwo'
+
 class ShowWeather extends React.Component {
   state = {
     city: null,
@@ -29,48 +32,55 @@ class ShowWeather extends React.Component {
   render() {
     const { weather } = this.state
     const { city } = this.state
-    if (!this.state.city) return <form
-      onSubmit={this.handleSubmit}
-    >
-      <input
-        onChange={this.handleChange}
-      >
-      </input>
-      <button>Submit</button>
-    </form>
+    if (!this.state.city) return (
+      <>
+        <Navbar />
+        <div className="search-form-container">
+          <h1 className="title is-2">Enter Your City</h1>
+          <form className="search-form"
+            onSubmit={this.handleSubmit}
+          >
+            <input
+              onChange={this.handleChange}
+            >
+            </input>
+          </form>
+        </div>
+      </>
+    )
     return (
       <>
-        <form
-          onSubmit={this.handleSubmit}
-        >
-          <input
-            onChange={this.handleChange}
+        <Navbar />
+        <div className="search-form-container-two">   
+          <form className="search-form"
+            onSubmit={this.handleSubmit}
           >
-          </input>
-          <button>Submit</button>
-        </form>
+            <input
+              onChange={this.handleChange}
+            >
+            </input>
+          </form>
+        </div>
         <section className="section">
-          <div className="container">
-            <div className="columns is-multiline">
-              <div className="column is-one-third">
+          <div className="container search-cont">
+            <div className="columns weather-board">
+              <div className="column is-three-fifths">
                 <div className="card">
                   <div className="card-content">
-                    <h1 className="title-of-the-card">
+                    <h1 className="title is-2 weather-title">
                       {city.name}, {city.country}
                     </h1>
-                    <div>
+                    <div className="weather-image">
                       <img src={weather.weather_icons} alt="Weather Icon" />
                     </div>
-                    <div className="main-content">
-                      <p>Current Temperature: {weather.temperature}°C</p>
-                      <p>Feels like: {weather.feelslike}°C</p>
-                      <p>Wind Speed: {weather.wind_speed}mph</p>
-                      <p>Wind Direction: {weather.wind_dir}</p>
-                      <p>Precipitation: {weather.precip}%</p>
-                      <p>Humidity: {weather.humidity}%</p>
-                      <p>Cloud cover: {weather.cloudcover}%</p>
-                    </div>
-                    <div className="">
+                    <div className="main-weather-content">
+                      <p >Current Temperature: <span className="weather-content">{weather.temperature}°C </span></p>
+                      <p >Feels like: <span className="weather-content">{weather.feelslike}°C </span></p>
+                      <p >Wind Speed: <span className="weather-content">{weather.wind_speed}mph </span></p>
+                      <p >Wind Direction: <span className="weather-content">{weather.wind_dir} </span></p>
+                      <p >Precipitation: <span className="weather-content">{weather.precip}%</span></p>
+                      <p >Humidity: <span className="weather-content">{weather.humidity}%</span></p>
+                      <p >Cloud cover: <span className="weather-content">{weather.cloudcover}%</span></p>
                     </div>
                   </div>
                 </div>
@@ -78,6 +88,7 @@ class ShowWeather extends React.Component {
             </div>
           </div>
         </section >
+        <FooterTwo />
       </>
     )
   }
