@@ -1,8 +1,8 @@
 import React from 'react'
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import Footer from './components/common/Footer'
 import ShowNews from './components/items/ShowNews'
 import Business from './components/items/categories/Business'
 import Entertainment from './components/items/categories/Entertainment'
@@ -11,12 +11,9 @@ import Health from './components/items/categories/Health'
 import Science from './components/items/categories/Science'
 import Sports from './components/items/categories/Sports'
 import Technology from './components/items/categories/Technology'
-import Footer from './components/common/Footer'
-
+import ShowWeather from './components/items/weather/showWeather'
 
 const App = () => {
-
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -30,6 +27,7 @@ const App = () => {
         <Route path="/news/sports" component={Sports} />
         <Route path="/news/technology" component={Technology} />
         <Route path="/news" component={ShowNews} />
+        <Route path="/weather" component={ShowWeather} />
       </Switch>
       <Footer />
     </BrowserRouter>

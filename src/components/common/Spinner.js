@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner'
 const Spinner = () => {
   return (
     <div className="loading-bar">
-      <Loader type="Puff" color="#808080" height="130" width="130" />
+      <Loader type="Puff" color="#00305c" height="130" width="130" />
     </div>
   )
 }

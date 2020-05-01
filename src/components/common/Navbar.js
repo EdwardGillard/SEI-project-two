@@ -13,6 +13,9 @@ class Navbar extends React.Component {
         <Link to="/news" className="navbar-item">
           <span>News</span>
         </Link>
+        <Link to="/weather" className="navbar-item">
+          <span>Weather</span>
+        </Link>
       </div>
     )
   }
