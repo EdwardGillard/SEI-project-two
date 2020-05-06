@@ -25,7 +25,7 @@ class Technology extends React.Component {
   }
 
   handleChange = async (event) => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     try {
       await this.setState({ country: event.target.value })
       this.componentDidMount()
