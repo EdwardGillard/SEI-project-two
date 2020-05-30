@@ -11,24 +11,37 @@ class ShowWeather extends React.Component {
   }
   async componentDidMount() {
     try {
+      this.loadWeather()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  loadWeather = async () => {
+    try {
       const res = await getAllWeather(this.state.searchTerm)
       this.setState({ city: res.data.location, weather: res.data.current })
     } catch (err) {
       console.log(err)
+      this.props.history.push('/notfound')
     }
   }
+
   handleSubmit = async event => {
     event.preventDefault()
     try {
-      this.componentDidMount()
+      this.loadWeather()
     } catch (err) {
       console.log(err)
+      this.props.history.push('/notfound')
     }
   }
+
   handleChange = async event => {
     const val = event.target.value
     this.setState({ searchTerm: val })
   }
+
   render() {
     const { weather } = this.state
     const { city } = this.state

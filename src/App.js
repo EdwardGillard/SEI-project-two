@@ -10,6 +10,7 @@ import Science from './components/items/categories/Science'
 import Sports from './components/items/categories/Sports'
 import Technology from './components/items/categories/Technology'
 import ShowWeather from './components/items/weather/showWeather'
+import ErrorPage from './components/common/ErrorPage'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/news/technology" component={Technology} />
         <Route path="/news" component={ShowNews} />
         <Route path="/weather" component={ShowWeather} />
+        <Route path="/*" component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   )

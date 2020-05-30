@@ -16,18 +16,25 @@ class Health extends React.Component {
 
   async componentDidMount() {
     try {
+      this.loadPage()
+    } catch (err) {
+      this.props.history.push('/notfound')
+    }
+  }
+
+  loadPage = async () => {
+    try {
       const res = await filterCategory(this.state.country, 'health')
       this.setState({ news: res.data.articles })
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 
   handleChange = async (event) => {
-    // console.log(event.target.value)
     try {
       await this.setState({ country: event.target.value })
-      this.componentDidMount()
+      this.loadPage()
     } catch (err) {
       console.log(err)
     }
