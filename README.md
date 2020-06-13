@@ -9,7 +9,7 @@ Project 2 was my first experience of pair coding. My partner and I had to create
 Once built our app was deployed using **Netlify**
 
 ![Homepage screenshot](images/Homepage.jpeg)
-![News screenshot](images/news.jpeg)
+![News screenshot](images/News.jpeg)
 
 -------------------------
 ## **Brief.**
