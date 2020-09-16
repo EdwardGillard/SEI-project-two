@@ -13,6 +13,16 @@ Once built our app was deployed using **Netlify**.
 
 -----------------------
 
+## ** To run this app.**
+
+Due to the API being restricted on deployment to see this app in full you will have to clone the repository and run it on your own computer.
+
+```yarn i```
+
+```yarn start```
+
+-----------------------
+
 ## **Brief.**
 
 #### Project brief:
