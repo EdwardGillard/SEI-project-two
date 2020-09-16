@@ -57,6 +57,7 @@ class ShowWeather extends React.Component {
               onChange={this.handleChange}
             >
             </input>
+            <button type="submit" className="weather-button">submit</button>
           </form>
         </div>
       </>
@@ -68,10 +69,8 @@ class ShowWeather extends React.Component {
           <form className="search-form"
             onSubmit={this.handleSubmit}
           >
-            <input
-              onChange={this.handleChange}
-            >
-            </input>
+            <input onChange={this.handleChange}></input>
+            <button type="submit" className="weather-button">submit</button>
           </form>
         </div>
         <section className="section">

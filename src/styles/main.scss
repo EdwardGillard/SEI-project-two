@@ -236,6 +236,14 @@ footer {
 .search-form-container {
   height: 100vh;
 }
+.weather-button{
+  height: 40px;
+}
+
+.search-form{
+  display: flex;
+  align-items: flex-start;
+}
 
 .weather-title {
   color: white;
